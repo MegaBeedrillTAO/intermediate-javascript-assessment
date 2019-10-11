@@ -14,7 +14,8 @@
 
 // CODE HERE...
 function callBinding(magicAnimals, updateAnimal, id){
-    let animal = magicAnimals[id];
+    let animal = magicAnimals[id-1]; 
+    console.log(animal);
     //updateAnimal.bind(animal)
     return updateAnimal.call(animal, 'Trogdor')
     
@@ -34,9 +35,13 @@ function callBinding(magicAnimals, updateAnimal, id){
 
 // CODE HERE...
 function applyBinding(magicAnimals, updateAnimal, id){
-    let animal = magicAnimals[id];
-    //updateAnimal.bind(animal)
-    return updateAnimal.apply(animal, ['being majestic', 'eating rainbows'])
+    let animal = magicAnimals[id-1];
+    let arr = ['being majestic', 'eating rainbows'];
+    animal = updateAnimal.apply(animal, arr);
+    return animal;
+    
+    
+    
 }
 
 

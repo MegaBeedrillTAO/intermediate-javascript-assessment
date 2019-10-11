@@ -37,7 +37,7 @@
 var firstUser = 'don\'t touch this string!';
 var thirdUser = 'don\'t touch this string, either!';
 
-function noWeakLink() {
+ function noWeakLink() {
 
   // return $http({
   //   method: 'GET',
@@ -80,7 +80,8 @@ function large() {
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // CODE HERE...
-let boundToElephant = large.bind(elephant);
+let boundToElephant = large.bind(elephant); 
+
 
 
 // *************
@@ -181,21 +182,22 @@ function forgetter(name){
 function frodo(startingHungerValue, startingDangerValue){
    let hunger = startingHungerValue;
    let danger = startingDangerValue;
+   
   return {
     dinnerOverFire: () =>{
-      hunger -= 25;
-      danger += 40;
+       this.hunger -= 25;
+       this.danger += 40;
       return{
-        hunger: hunger,
-        danger: danger
+        hunger,
+        danger
       }
     },
     hidingInBush: () =>{
-      hunger += 35;
-      danger -= 20;
+       this.hunger += 35;
+       this.danger -= 20;
       return{
-        hunger: hunger,
-        danger: danger
+        hunger,
+        danger
       }
     }
 
