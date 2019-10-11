@@ -125,6 +125,9 @@ mustang.drive();
 // CODE HERE...
 String.prototype.grammarPolice = function(){
   let str = this.valueOf().split(' ');
+  for (let q = 0; q < str.length; q++){
+    str[q] = Array.from(str[q])
+  }
   for (let i = 0; i<str.length; i++){
     for (let j = 0; j < str[i].length; j++){
       if (j === 0){
@@ -135,7 +138,9 @@ String.prototype.grammarPolice = function(){
       }
     }
   }
-  
+  for (let w = 0; w < str.length; w++){
+    str[w] = str[w].join('')
+  }
   return str.join(' ');
 }
 
